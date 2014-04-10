@@ -80,7 +80,7 @@ class Cx11SemaphoreSurrogate {
              countValue-= count;
              while (countValue < 0)
              {
-                 std::cv_status status = condVar.wait_for(lock,duration);
+                 std::cv_status::cv_status status = condVar.wait_for(lock,duration);
             	 switch(status)
             	 {
                  case std::cv_status::no_timeout:
